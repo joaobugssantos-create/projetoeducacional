@@ -231,6 +231,39 @@
             display: inline-block;
         }
 
+        .botao-exemplos {
+            background: #162b4e;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 15px 0 5px;
+            border: 2px solid #ffd966;
+            transition: 0.3s;
+        }
+
+        .botao-exemplos:hover {
+            background: #ffd966;
+            color: #162b4e;
+            transform: scale(1.05);
+        }
+
+        .exemplos-container {
+            margin-top: 15px;
+        }
+
+        .exemplo-item {
+            background: white;
+            border: 2px solid #162b4e;
+            border-radius: 20px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 4px 4px 0 #0f1f3a;
+        }
+
         /* CARROSSEL DE DICAS */
         .carrossel-dicas {
             padding: 15px 25px;
@@ -306,50 +339,54 @@
                 </div>
                 <div class="cards-info">
                     <div class="card-info">
-                        <div class="numero" id="topicoCount">5</div>
+                        <div class="numero" id="topicoCount">3</div>
                         <div>exemplos</div>
-                    </div>
-                    <div class="card-info">
-                        <div class="numero" id="exerciciosCount">12</div>
-                        <div>exercícios</div>
                     </div>
                 </div>
             </div>
 
             <!-- COLUNA DIREITA (CONTEÚDO DAS MATÉRIAS) -->
             <div class="coluna-direita" id="conteudoMateria">
-                <!-- MATEMÁTICA - REGRA DE 3 -->
+                <!-- MATEMÁTICA - REGRA DE 3 (SIMPLES DIRETA E INVERSA) -->
                 <div class="conteudo-materia ativo" id="matematica">
                     <h2 class="materia-titulo">📐 Matemática - Regra de 3</h2>
                     
                     <div class="topico">
                         <h3>📏 Regra de 3 Simples</h3>
-                        <p>Utilizada para resolver problemas com <strong>duas grandezas</strong> diretamente ou inversamente proporcionais.</p>
-                        <div class="exemplo">
-                            <span class="destaque">Diretamente proporcional</span><br>
-                            Se 5 metros de tecido custam R$ 80, quanto custam 12 metros?<br>
-                            5 m → R$ 80<br>
-                            12 m → x<br>
-                            5/12 = 80/x → 5x = 960 → x = R$ 192
+                        <p>Utilizada para resolver problemas com <strong>duas grandezas</strong> que podem ser <strong>diretamente</strong> ou <strong>inversamente proporcionais</strong>.</p>
+                        
+                        <button class="botao-exemplos" onclick="mostrarExemplosMatematica()">📖 VER 3 EXEMPLOS</button>
+                        
+                        <div id="exemplosMatematica" style="display: none;">
+                            <div class="exemplo-item">
+                                <span class="destaque">Exemplo 1 - Diretamente proporcional</span><br>
+                                Se 5 metros de tecido custam R$ 80, quanto custam 12 metros?<br>
+                                <strong>5 m → R$ 80</strong><br>
+                                <strong>12 m → x</strong><br>
+                                5/12 = 80/x → 5x = 960 → <strong>x = R$ 192</strong>
+                            </div>
+                            
+                            <div class="exemplo-item">
+                                <span class="destaque">Exemplo 2 - Diretamente proporcional</span><br>
+                                Um carro percorre 300 km com 25 litros de combustível. Quantos litros serão necessários para percorrer 420 km?<br>
+                                <strong>300 km → 25 L</strong><br>
+                                <strong>420 km → x</strong><br>
+                                300/420 = 25/x → 300x = 10500 → <strong>x = 35 litros</strong>
+                            </div>
+                            
+                            <div class="exemplo-item">
+                                <span class="destaque">Exemplo 3 - Inversamente proporcional</span><br>
+                                Um carro a 60 km/h faz um trajeto em 4 horas. Em quanto tempo faria a 80 km/h?<br>
+                                <strong>60 km/h → 4 h</strong><br>
+                                <strong>80 km/h → x</strong><br>
+                                60/80 = x/4 → 80x = 240 → <strong>x = 3 horas</strong>
+                            </div>
                         </div>
-                        <div class="exemplo">
-                            <span class="destaque">Inversamente proporcional</span><br>
-                            Um carro a 60 km/h faz um trajeto em 4 horas. Em quanto tempo faria a 80 km/h?<br>
-                            60 km/h → 4 h<br>
-                            80 km/h → x<br>
-                            60/80 = x/4 → 80x = 240 → x = 3 horas
-                        </div>
-                    </div>
-
-                    <div class="topico">
-                        <h3>📐 Regra de 3 Composta</h3>
-                        <p>Envolve <strong>três ou mais grandezas</strong>. Analisamos cada relação separadamente.</p>
-                        <div class="exemplo">
-                            8 máquinas produzem 1200 peças em 5 dias. Quantas peças serão produzidas por 12 máquinas em 6 dias?<br>
-                            Máquinas ↑ peças ↑ (direta)<br>
-                            Dias ↑ peças ↑ (direta)<br>
-                            8/12 × 5/6 = 1200/x<br>
-                            40/72 = 1200/x → 40x = 86400 → x = 2160 peças
+                        
+                        <div class="exemplo" style="margin-top: 15px;">
+                            <span class="destaque">Fórmulas:</span><br>
+                            <strong>Diretamente proporcional:</strong> a/b = c/x<br>
+                            <strong>Inversamente proporcional:</strong> a/b = x/c
                         </div>
                     </div>
                 </div>
@@ -370,13 +407,6 @@
                         <strong>3. Tempo:</strong> Cronológico ou psicológico.<br>
                         <strong>4. Enredo:</strong> Sequência de eventos com introdução, desenvolvimento, clímax e desfecho.<br>
                         <strong>5. Narrador:</strong> Pode ser em 1ª ou 3ª pessoa.</p>
-                        <div class="exemplo">
-                            <span class="destaque">Exemplo de estrutura:</span><br>
-                            • Introdução: "Era uma vez um pescador..."<br>
-                            • Desenvolvimento: "Certo dia, ele encontrou uma garrafa..."<br>
-                            • Clímax: "Ao abrir, um gênio apareceu..."<br>
-                            • Desfecho: "O pescador usou sua inteligência e foi recompensado."
-                        </div>
                     </div>
 
                     <div class="topico">
@@ -410,13 +440,6 @@
                             • Equinócios (dias e noites iguais)
                         </div>
                     </div>
-
-                    <div class="topico">
-                        <h3>📐 Outros movimentos</h3>
-                        <p><strong>Precessão dos equinócios:</strong> movimento circular do eixo terrestre (cerca de 26 mil anos).<br>
-                        <strong>Nutacão:</strong> oscilação do eixo.<br>
-                        <strong>Movimento de periélio e afélio:</strong> aproximação e afastamento do Sol.</p>
-                    </div>
                 </div>
 
                 <!-- HISTÓRIA - TROPEIRISMO -->
@@ -431,19 +454,11 @@
                     <div class="topico">
                         <h3>🛤️ As rotas tropeiras</h3>
                         <p>Os tropeiros percorriam caminhos como o <strong>Caminho de Viamão</strong> (Rio Grande do Sul a Sorocaba) e a <strong>Estrada Real</strong>, levando gado, charque, tecidos e trazendo sal, açúcar e ferramentas.</p>
-                        <div class="exemplo">
-                            <span class="destaque">Centro de comércio:</span> A feira de muares em Sorocaba (SP) era o principal ponto de venda de animais.
-                        </div>
                     </div>
 
                     <div class="topico">
                         <h3>⚒️ Importância histórica</h3>
                         <p>• Integração econômica entre regiões<br>• Surgimento de cidades ao longo das rotas<br>• Cultura tropeira (culinária, música, vocabulário)<br>• Abastecimento das minas de ouro</p>
-                    </div>
-
-                    <div class="topico">
-                        <h3>🎒 O dia a dia do tropeiro</h3>
-                        <p>Viajavam em comboios com mulas de carga, acampavam em pousos, usavam indumentária típica (poncho, chapéu, botas) e levavam alimentos como feijão, toucinho e farofa.</p>
                     </div>
                 </div>
             </div>
@@ -492,21 +507,22 @@
             };
             document.getElementById('iconeMateria').textContent = icones[materia];
             
-            // Atualizar cards de informação
-            const topicos = {
-                matematica: '8',
-                portugues: '6',
-                geografia: '7',
-                historia: '9'
-            };
-            document.getElementById('topicoCount').textContent = topicos[materia];
+            // Atualizar card de informação (só matemática tem exemplos)
+            if (materia === 'matematica') {
+                document.getElementById('topicoCount').textContent = '3';
+            } else {
+                document.getElementById('topicoCount').textContent = '0';
+            }
+            
+            // Esconder exemplos ao trocar de matéria
+            document.getElementById('exemplosMatematica').style.display = 'none';
             
             // Atualizar dicas no carrossel
             const dicas = {
                 matematica: [
-                    'Sempre identifique se as grandezas são diretas ou inversas',
-                    'Monte a proporção com atenção às unidades',
-                    'Na regra de 3 composta, analise cada grandeza separadamente'
+                    'Na regra de 3 direta, multiplique cruzado',
+                    'Na regra de 3 inversa, multiplique reto',
+                    'Sempre verifique se as grandezas são diretas ou inversas'
                 ],
                 portugues: [
                     'Um conto tem introdução, desenvolvimento, clímax e desfecho',
@@ -533,6 +549,15 @@
                 card.innerHTML = `💡 ${dica}`;
                 gradeDicas.appendChild(card);
             });
+        }
+
+        function mostrarExemplosMatematica() {
+            const exemplosDiv = document.getElementById('exemplosMatematica');
+            if (exemplosDiv.style.display === 'none') {
+                exemplosDiv.style.display = 'block';
+            } else {
+                exemplosDiv.style.display = 'none';
+            }
         }
 
         // Inicializar com Matemática
