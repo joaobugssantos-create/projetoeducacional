@@ -3,24 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Estudo Médio - 1° Ano | Matemática, Português, Geografia, História</title>
+    <title>1° Ano EM - Matemática, Português, Geografia, História</title>
     <style>
-        /* ESTILO GERAL - TELA FIXA */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', 'Poppins', 'Arial', sans-serif;
+            font-family: 'Segoe UI', 'Poppins', sans-serif;
         }
 
         html, body {
             width: 100%;
             height: 100vh;
             overflow: hidden;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
         }
 
         body {
@@ -30,23 +26,22 @@
             padding: 15px;
         }
 
-        /* CONTAINER PRINCIPAL - TELA FIXA */
         .container-fixo {
             max-width: 1300px;
             width: 100%;
             height: 95vh;
-            background: #f8faff;
+            background: #f0f4fa;
             border-radius: 40px;
             overflow: hidden;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
             display: flex;
             flex-direction: column;
-            border: 3px solid #ffffff80;
+            border: 3px solid #ffd966;
         }
 
-        /* ===== CABEÇALHO COM TÍTULO ===== */
+        /* CABEÇALHO */
         .cabecalho {
-            background: linear-gradient(90deg, #2b3d8f, #1e2b6b);
+            background: linear-gradient(90deg, #162b4e, #1e3c72);
             padding: 15px 30px;
             border-bottom: 4px solid #ffd966;
             flex-shrink: 0;
@@ -56,23 +51,21 @@
             color: white;
             font-size: 2.2rem;
             font-weight: 700;
-            text-shadow: 3px 3px 0 #1a2752;
-            letter-spacing: 1px;
+            text-shadow: 3px 3px 0 #0f1f3a;
         }
 
         .cabecalho p {
             color: #ffd966;
             font-size: 1.1rem;
-            font-weight: 500;
         }
 
-        /* ===== MENU DE MATÉRIAS (BOTÕES) ===== */
+        /* MENU DE BOTÕES */
         .menu-materias {
             display: flex;
             gap: 20px;
             padding: 15px 30px;
-            background: #ffffff;
-            border-bottom: 3px solid #2b3d8f;
+            background: white;
+            border-bottom: 3px solid #162b4e;
             flex-shrink: 0;
             flex-wrap: nowrap;
             overflow-x: auto;
@@ -84,159 +77,174 @@
         }
 
         .botao-materia {
-            background: linear-gradient(145deg, #f0f3ff, #e6ecfe);
-            color: #1e2b6b;
+            background: linear-gradient(145deg, #eef2ff, #dfe7ff);
+            color: #162b4e;
             font-weight: 700;
             font-size: 1.2rem;
-            padding: 12px 25px;
+            padding: 12px 30px;
             border-radius: 50px;
             cursor: pointer;
-            border: 2px solid #2b3d8f;
-            box-shadow: 0 5px 0 #0f1a40;
+            border: 2px solid #162b4e;
+            box-shadow: 0 5px 0 #0a1a2f;
             min-width: 140px;
             text-align: center;
-            white-space: nowrap;
             transition: 0.3s;
         }
 
         .botao-materia:hover {
-            background: #2b3d8f;
+            background: #162b4e;
             color: white;
             transform: translateY(-3px);
-            box-shadow: 0 8px 0 #0f1a40;
+            box-shadow: 0 8px 0 #0a1a2f;
         }
 
         .botao-materia.ativo {
-            background: #2b3d8f;
+            background: #162b4e;
             color: white;
             box-shadow: 0 5px 0 #ffd966;
         }
 
-        /* ===== ÁREA DE CONTEÚDO PRINCIPAL ===== */
+        /* ÁREA PRINCIPAL */
         .conteudo-principal {
             display: flex;
             padding: 20px 25px;
             gap: 25px;
             flex: 1;
             min-height: 0;
-            background: linear-gradient(135deg, #f9fcff, #f0f5ff);
         }
 
-        /* COLUNA ESQUERDA - ÍCONE/IMAGEM */
+        /* COLUNA ESQUERDA (IMAGEM/ÍCONE) */
         .coluna-esquerda {
             flex: 1;
-            max-width: 40%;
+            max-width: 35%;
             display: flex;
             flex-direction: column;
             gap: 15px;
         }
 
         .imagem-destaque {
-            background: linear-gradient(145deg, #2b3d8f, #1e2b6b);
+            background: linear-gradient(145deg, #162b4e, #1e3c72);
             border-radius: 30px;
-            padding: 20px;
-            height: 200px;
+            padding: 25px;
+            height: 220px;
             display: flex;
             align-items: center;
             justify-content: center;
             border: 4px solid #ffd966;
-            box-shadow: 15px 15px 0 #0f1a40;
+            box-shadow: 12px 12px 0 #0f1f3a;
         }
 
         .imagem-destaque span {
             font-size: 8rem;
-            filter: drop-shadow(10px 10px 0 #0f1a40);
+            filter: drop-shadow(8px 8px 0 #0f1f3a);
         }
 
-        .cards-rapidos {
+        .cards-info {
             display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
+            gap: 12px;
         }
 
-        .card-mini {
+        .card-info {
             background: white;
             border-radius: 20px;
-            padding: 15px;
+            padding: 15px 10px;
             flex: 1;
-            min-width: 100px;
             text-align: center;
-            border: 2px solid #2b3d8f;
-            box-shadow: 5px 5px 0 #0f1a40;
+            border: 2px solid #162b4e;
+            box-shadow: 5px 5px 0 #0f1f3a;
         }
 
-        .card-mini .numero {
+        .card-info .numero {
             font-size: 2rem;
             font-weight: 800;
-            color: #2b3d8f;
+            color: #162b4e;
         }
 
-        /* COLUNA DIREITA - CONTEÚDO DA MATÉRIA */
+        /* COLUNA DIREITA (CONTEÚDO) */
         .coluna-direita {
-            flex: 1.5;
+            flex: 2;
             background: white;
             border-radius: 30px;
             padding: 25px;
             overflow-y: auto;
-            border: 3px solid #2b3d8f;
-            box-shadow: inset 0 0 20px #e0e7ff, 10px 10px 0 #0f1a40;
+            border: 3px solid #162b4e;
+            box-shadow: inset 0 0 20px #d9e2ff, 8px 8px 0 #0f1f3a;
+        }
+
+        /* ESTILOS DOS CONTEÚDOS */
+        .conteudo-materia {
+            display: none;
+        }
+
+        .conteudo-materia.ativo {
+            display: block;
         }
 
         .materia-titulo {
             font-size: 2.2rem;
-            color: #1e2b6b;
+            color: #162b4e;
             border-left: 10px solid #ffd966;
             padding-left: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .topico {
+            background: #f5f9ff;
+            padding: 20px;
+            border-radius: 25px;
             margin-bottom: 25px;
-            background: #f8fbff;
-            padding: 15px;
-            border-radius: 20px;
-            border: 2px solid #cbd5ff;
+            border: 2px solid #bdd0ff;
         }
 
         .topico h3 {
-            color: #2b3d8f;
-            font-size: 1.4rem;
-            margin-bottom: 10px;
+            color: #162b4e;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
         .topico p {
-            color: #2d3748;
-            line-height: 1.6;
-            font-size: 1rem;
-            margin-bottom: 10px;
+            color: #2c3e50;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
         }
 
         .exemplo {
-            background: #eef2ff;
-            padding: 12px;
-            border-radius: 15px;
-            border-left: 5px solid #ffd966;
-            margin-top: 10px;
+            background: #eef5ff;
+            padding: 15px;
+            border-radius: 20px;
+            border-left: 6px solid #ffd966;
             font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            margin-top: 10px;
         }
 
-        /* ===== CARROSSEL DE DICAS ===== */
+        .destaque {
+            background: #ffd966;
+            color: #162b4e;
+            padding: 5px 12px;
+            border-radius: 30px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        /* CARROSSEL DE DICAS */
         .carrossel-dicas {
             padding: 15px 25px;
-            background: #ffffff;
-            border-top: 3px solid #2b3d8f;
-            border-bottom: 3px solid #2b3d8f;
+            background: white;
+            border-top: 3px solid #162b4e;
+            border-bottom: 3px solid #162b4e;
             flex-shrink: 0;
         }
 
         .dicas-titulo {
             font-size: 1.2rem;
-            color: #1e2b6b;
+            color: #162b4e;
             margin-bottom: 10px;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .grade-dicas {
@@ -244,80 +252,31 @@
             gap: 15px;
             overflow-x: auto;
             padding: 5px 0;
-            scrollbar-width: thin;
         }
 
         .dica-card {
-            min-width: 180px;
-            background: linear-gradient(145deg, #667eea, #2b3d8f);
+            min-width: 200px;
+            background: linear-gradient(145deg, #162b4e, #1e3c72);
             border-radius: 20px;
-            padding: 12px;
+            padding: 15px;
             color: white;
             border: 2px solid #ffd966;
-            box-shadow: 5px 5px 0 #0f1a40;
+            box-shadow: 4px 4px 0 #0f1f3a;
         }
 
-        .dica-card strong {
-            color: #ffd966;
-            font-size: 1.1rem;
-        }
-
-        /* ===== RODAPÉ ===== */
+        /* RODAPÉ */
         .rodape {
-            background: #1e2b6b;
+            background: #162b4e;
             color: white;
             padding: 12px 25px;
             border-top: 4px solid #ffd966;
             flex-shrink: 0;
         }
 
-        .info-rodape {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: nowrap;
-            gap: 15px;
-        }
-
-        .logo-rodape h3 {
-            color: #ffd966;
-            font-size: 1.3rem;
-        }
-
-        .links-rodape {
-            display: flex;
-            gap: 20px;
-        }
-
-        .links-rodape a {
-            color: #cfdcff;
-            text-decoration: none;
-            font-size: 0.95rem;
-        }
-
         .copyright {
             text-align: center;
-            font-size: 0.85rem;
-            margin-top: 8px;
-            color: #a5b6ff;
-            border-top: 1px solid #3f52a0;
-            padding-top: 8px;
-        }
-
-        /* CONTEÚDOS ESPECÍFICOS DE CADA MATÉRIA */
-        .conteudo-matematica, .conteudo-portugues, .conteudo-geografia, .conteudo-historia {
-            display: none;
-        }
-
-        .conteudo-matematica.ativo, .conteudo-portugues.ativo, 
-        .conteudo-geografia.ativo, .conteudo-historia.ativo {
-            display: block;
-        }
-
-        /* AJUSTES */
-        .icone-grande {
-            font-size: 5rem;
-            line-height: 1;
+            font-size: 0.9rem;
+            color: #cfdcff;
         }
     </style>
 </head>
@@ -327,10 +286,10 @@
         <!-- CABEÇALHO -->
         <header class="cabecalho">
             <h1>📚 1° ANO ENSINO MÉDIO</h1>
-            <p>Matemática · Português · Geografia · História</p>
+            <p>Clique nos botões para navegar entre as matérias</p>
         </header>
 
-        <!-- MENU DE MATÉRIAS -->
+        <!-- MENU DE BOTÕES -->
         <nav class="menu-materias">
             <div class="botao-materia ativo" onclick="mostrarMateria('matematica')">📐 MATEMÁTICA</div>
             <div class="botao-materia" onclick="mostrarMateria('portugues')">📝 PORTUGUÊS</div>
@@ -338,118 +297,153 @@
             <div class="botao-materia" onclick="mostrarMateria('historia')">🏛️ HISTÓRIA</div>
         </nav>
 
-        <!-- ÁREA PRINCIPAL -->
+        <!-- CONTEÚDO PRINCIPAL -->
         <section class="conteudo-principal">
             <!-- COLUNA ESQUERDA (FIXA) -->
             <div class="coluna-esquerda">
                 <div class="imagem-destaque" id="imagemMateria">
                     <span id="iconeMateria">📐</span>
                 </div>
-                <div class="cards-rapidos">
-                    <div class="card-mini">
-                        <div class="numero" id="aulasCount">24</div>
-                        <div>aulas</div>
+                <div class="cards-info">
+                    <div class="card-info">
+                        <div class="numero" id="topicoCount">5</div>
+                        <div>exemplos</div>
                     </div>
-                    <div class="card-mini">
-                        <div class="numero" id="exerciciosCount">156</div>
+                    <div class="card-info">
+                        <div class="numero" id="exerciciosCount">12</div>
                         <div>exercícios</div>
-                    </div>
-                    <div class="card-mini">
-                        <div class="numero" id="topicoCount">8</div>
-                        <div>tópicos</div>
                     </div>
                 </div>
             </div>
 
-            <!-- COLUNA DIREITA (CONTEÚDO DINÂMICO) -->
+            <!-- COLUNA DIREITA (CONTEÚDO DAS MATÉRIAS) -->
             <div class="coluna-direita" id="conteudoMateria">
-                <!-- MATEMÁTICA -->
-                <div class="conteudo-matematica ativo" id="matematica">
-                    <h2 class="materia-titulo">📐 Matemática - 1° Ano</h2>
+                <!-- MATEMÁTICA - REGRA DE 3 -->
+                <div class="conteudo-materia ativo" id="matematica">
+                    <h2 class="materia-titulo">📐 Matemática - Regra de 3</h2>
                     
                     <div class="topico">
-                        <h3>🔢 Conjuntos numéricos</h3>
-                        <p>Naturais (ℕ): 0,1,2,3... | Inteiros (ℤ): ...-2,-1,0,1,2... | Racionais (ℚ): frações, decimais exatos ou periódicos | Irracionais: π, √2 | Reais (ℝ): união de todos</p>
-                        <div class="exemplo">ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ</div>
+                        <h3>📏 Regra de 3 Simples</h3>
+                        <p>Utilizada para resolver problemas com <strong>duas grandezas</strong> diretamente ou inversamente proporcionais.</p>
+                        <div class="exemplo">
+                            <span class="destaque">Diretamente proporcional</span><br>
+                            Se 5 metros de tecido custam R$ 80, quanto custam 12 metros?<br>
+                            5 m → R$ 80<br>
+                            12 m → x<br>
+                            5/12 = 80/x → 5x = 960 → x = R$ 192
+                        </div>
+                        <div class="exemplo">
+                            <span class="destaque">Inversamente proporcional</span><br>
+                            Um carro a 60 km/h faz um trajeto em 4 horas. Em quanto tempo faria a 80 km/h?<br>
+                            60 km/h → 4 h<br>
+                            80 km/h → x<br>
+                            60/80 = x/4 → 80x = 240 → x = 3 horas
+                        </div>
                     </div>
 
                     <div class="topico">
-                        <h3>📈 Funções</h3>
-                        <p>Definição: relação entre dois conjuntos onde cada elemento do domínio tem uma única imagem. Função afim: f(x) = ax + b</p>
-                        <div class="exemplo">f(x) = 2x + 3 → f(1) = 5</div>
-                    </div>
-
-                    <div class="topico">
-                        <h3>📊 Estatística básica</h3>
-                        <p>Média, mediana, moda. Amplitude, variância e desvio padrão.</p>
-                        <div class="exemplo">Média = (soma dos valores) / (quantidade)</div>
+                        <h3>📐 Regra de 3 Composta</h3>
+                        <p>Envolve <strong>três ou mais grandezas</strong>. Analisamos cada relação separadamente.</p>
+                        <div class="exemplo">
+                            8 máquinas produzem 1200 peças em 5 dias. Quantas peças serão produzidas por 12 máquinas em 6 dias?<br>
+                            Máquinas ↑ peças ↑ (direta)<br>
+                            Dias ↑ peças ↑ (direta)<br>
+                            8/12 × 5/6 = 1200/x<br>
+                            40/72 = 1200/x → 40x = 86400 → x = 2160 peças
+                        </div>
                     </div>
                 </div>
 
-                <!-- PORTUGUÊS -->
-                <div class="conteudo-portugues" id="portugues">
-                    <h2 class="materia-titulo">📝 Português - 1° Ano</h2>
+                <!-- PORTUGUÊS - CONTO -->
+                <div class="conteudo-materia" id="portugues">
+                    <h2 class="materia-titulo">📝 Português - O Conto</h2>
                     
                     <div class="topico">
-                        <h3>📖 Interpretação textual</h3>
-                        <p>Ideia principal, tese do autor, argumentos, conclusão. Tipos de discurso: direto, indireto, indireto livre.</p>
-                        <div class="exemplo">"Ela disse: 'Vou estudar'." (discurso direto)</div>
+                        <h3>📖 Do que é formado um conto?</h3>
+                        <p>O conto é uma narrativa <strong>curta e objetiva</strong>, com poucos personagens e uma única ação principal. Sua estrutura básica inclui:</p>
                     </div>
 
                     <div class="topico">
-                        <h3>📚 Gramática: classes de palavras</h3>
-                        <p>Substantivo, adjetivo, verbo, advérbio, preposição, conjunção, interjeição. Flexão nominal e verbal.</p>
-                        <div class="exemplo">"O menino bonito correu rapidamente." (menino: subst; bonito: adj; correu: verbo; rapidamente: adv)</div>
+                        <h3>🔹 Elementos do conto</h3>
+                        <p><strong>1. Personagens:</strong> Geralmente poucos, com foco em um protagonista.<br>
+                        <strong>2. Espaço:</strong> Onde a história acontece (físico ou social).<br>
+                        <strong>3. Tempo:</strong> Cronológico ou psicológico.<br>
+                        <strong>4. Enredo:</strong> Sequência de eventos com introdução, desenvolvimento, clímax e desfecho.<br>
+                        <strong>5. Narrador:</strong> Pode ser em 1ª ou 3ª pessoa.</p>
+                        <div class="exemplo">
+                            <span class="destaque">Exemplo de estrutura:</span><br>
+                            • Introdução: "Era uma vez um pescador..."<br>
+                            • Desenvolvimento: "Certo dia, ele encontrou uma garrafa..."<br>
+                            • Clímax: "Ao abrir, um gênio apareceu..."<br>
+                            • Desfecho: "O pescador usou sua inteligência e foi recompensado."
+                        </div>
                     </div>
 
                     <div class="topico">
-                        <h3>✍️ Figuras de linguagem</h3>
-                        <p>Metáfora, metonímia, antítese, paradoxo, hipérbole, eufemismo, ironia.</p>
-                        <div class="exemplo">"Seus olhos são dois faróis" (metáfora)</div>
+                        <h3>✍️ Características principais</h3>
+                        <p>• Narrativa enxuta<br>• Conflito único<br>• Tensão concentrada<br>• Final surpreendente ou reflexivo<br>• Unidade de efeito (tudo contribui para uma única impressão)</p>
                     </div>
                 </div>
 
-                <!-- GEOGRAFIA -->
-                <div class="conteudo-geografia" id="geografia">
-                    <h2 class="materia-titulo">🌍 Geografia - 1° Ano</h2>
+                <!-- GEOGRAFIA - MOVIMENTOS DA TERRA -->
+                <div class="conteudo-materia" id="geografia">
+                    <h2 class="materia-titulo">🌍 Geografia - Movimentos da Terra</h2>
                     
                     <div class="topico">
-                        <h3>🗺️ Cartografia</h3>
-                        <p>Elementos do mapa: título, legenda, escala, orientação, projeções. Coordenadas geográficas: latitude e longitude.</p>
-                        <div class="exemplo">Escala 1:100.000 → 1cm no mapa = 1km real</div>
+                        <h3>🌞 Rotação</h3>
+                        <p>Movimento que a Terra realiza em torno de seu próprio eixo, de oeste para leste, com duração aproximada de <strong>24 horas</strong>.</p>
+                        <div class="exemplo">
+                            <span class="destaque">Consequências:</span><br>
+                            • Sucessão dos dias e noites<br>
+                            • Movimento aparente do Sol<br>
+                            • Fusos horários
+                        </div>
                     </div>
 
                     <div class="topico">
-                        <h3>⛰️ Estrutura geológica</h3>
-                        <p>Eras geológicas, tectônica de placas, agentes internos (vulcanismo, terremotos) e externos (intemperismo, erosão).</p>
-                        <div class="exemplo">Cordilheira dos Andes: formação por choque de placas</div>
+                        <h3>🌍 Translação</h3>
+                        <p>Movimento da Terra ao redor do Sol, em órbita elíptica, com duração de aproximadamente <strong>365 dias e 6 horas</strong> (ano civil).</p>
+                        <div class="exemplo">
+                            <span class="destaque">Consequências:</span><br>
+                            • Estações do ano<br>
+                            • Solstícios (máxima diferença de insolação)<br>
+                            • Equinócios (dias e noites iguais)
+                        </div>
                     </div>
 
                     <div class="topico">
-                        <h3>☁️ Climatologia</h3>
-                        <p>Fatores climáticos: latitude, altitude, massas de ar. Tipos de clima: equatorial, tropical, temperado, etc.</p>
+                        <h3>📐 Outros movimentos</h3>
+                        <p><strong>Precessão dos equinócios:</strong> movimento circular do eixo terrestre (cerca de 26 mil anos).<br>
+                        <strong>Nutacão:</strong> oscilação do eixo.<br>
+                        <strong>Movimento de periélio e afélio:</strong> aproximação e afastamento do Sol.</p>
                     </div>
                 </div>
 
-                <!-- HISTÓRIA -->
-                <div class="conteudo-historia" id="historia">
-                    <h2 class="materia-titulo">🏛️ História - 1° Ano</h2>
+                <!-- HISTÓRIA - TROPEIRISMO -->
+                <div class="conteudo-materia" id="historia">
+                    <h2 class="materia-titulo">🏛️ História - Tropeirismo</h2>
                     
                     <div class="topico">
-                        <h3>🏺 Antiguidade Clássica</h3>
-                        <p>Grécia: democracia ateniense, filosofia, mitologia. Roma: república, império, direito romano, Pax Romana.</p>
-                        <div class="exemplo">Sócrates, Platão e Aristóteles - filosofia grega</div>
+                        <h3>🐴 O que foi o Tropeirismo?</h3>
+                        <p>Foi um sistema de comércio e transporte de mercadorias (especialmente gado, muares e alimentos) realizado por <strong>tropeiros</strong> entre o Sul, Sudeste e Centro-Oeste do Brasil, nos séculos XVII ao XIX.</p>
                     </div>
 
                     <div class="topico">
-                        <h3>⚔️ Idade Média</h3>
-                        <p>Feudalismo, suserania e vassalagem, poder da Igreja, cruzadas, renascimento comercial e urbano.</p>
+                        <h3>🛤️ As rotas tropeiras</h3>
+                        <p>Os tropeiros percorriam caminhos como o <strong>Caminho de Viamão</strong> (Rio Grande do Sul a Sorocaba) e a <strong>Estrada Real</strong>, levando gado, charque, tecidos e trazendo sal, açúcar e ferramentas.</p>
+                        <div class="exemplo">
+                            <span class="destaque">Centro de comércio:</span> A feira de muares em Sorocaba (SP) era o principal ponto de venda de animais.
+                        </div>
                     </div>
 
                     <div class="topico">
-                        <h3>🌎 Grandes Navegações</h3>
-                        <p>Expansão marítima europeia, chegada dos portugueses ao Brasil, mercantilismo, colonização.</p>
-                        <div class="exemplo">1500: Chegada de Cabral ao Brasil</div>
+                        <h3>⚒️ Importância histórica</h3>
+                        <p>• Integração econômica entre regiões<br>• Surgimento de cidades ao longo das rotas<br>• Cultura tropeira (culinária, música, vocabulário)<br>• Abastecimento das minas de ouro</p>
+                    </div>
+
+                    <div class="topico">
+                        <h3>🎒 O dia a dia do tropeiro</h3>
+                        <p>Viajavam em comboios com mulas de carga, acampavam em pousos, usavam indumentária típica (poncho, chapéu, botas) e levavam alimentos como feijão, toucinho e farofa.</p>
                     </div>
                 </div>
             </div>
@@ -457,90 +451,78 @@
 
         <!-- CARROSSEL DE DICAS -->
         <section class="carrossel-dicas">
-            <div class="dicas-titulo">💡 Dicas de estudo para o 1° ano</div>
+            <div class="dicas-titulo">📌 Dicas rápidas</div>
             <div class="grade-dicas" id="gradeDicas">
-                <div class="dica-card"><strong>📐 Matemática:</strong> Pratique funções diariamente</div>
-                <div class="dica-card"><strong>📝 Português:</strong> Leia um livro por mês</div>
-                <div class="dica-card"><strong>🌍 Geografia:</strong> Veja atlas e mapas</div>
-                <div class="dica-card"><strong>🏛️ História:</strong> Faça linhas do tempo</div>
-                <div class="dica-card"><strong>📚 Geral:</strong> Resuma cada capítulo</div>
+                <!-- Será preenchido via JavaScript -->
             </div>
         </section>
 
         <!-- RODAPÉ -->
         <footer class="rodape">
-            <div class="info-rodape">
-                <div class="logo-rodape">
-                    <h3>📚 1° ANO ENSINO MÉDIO</h3>
-                </div>
-                <div class="links-rodape">
-                    <a href="#">Conteúdo</a>
-                    <a href="#">Exercícios</a>
-                    <a href="#">Vídeos</a>
-                    <a href="#">Contato</a>
-                </div>
-            </div>
             <div class="copyright">
-                © 2025 Estudo Médio - Conteúdo programático 1° ano | Matemática, Português, Geografia, História
+                © 2026 - 1° Ano Ensino Médio | Conteúdos: Regra de 3, Conto, Movimentos da Terra, Tropeirismo
             </div>
         </footer>
     </div>
 
     <script>
-        // Função para alternar entre matérias
         function mostrarMateria(materia) {
             // Esconder todos os conteúdos
-            document.querySelectorAll('.conteudo-matematica, .conteudo-portugues, .conteudo-geografia, .conteudo-historia').forEach(el => {
+            document.querySelectorAll('.conteudo-materia').forEach(el => {
                 el.classList.remove('ativo');
             });
             
             // Mostrar o conteúdo selecionado
-            document.querySelector('.' + materia).classList.add('ativo');
+            document.getElementById(materia).classList.add('ativo');
             
             // Atualizar botões
             document.querySelectorAll('.botao-materia').forEach(btn => {
                 btn.classList.remove('ativo');
             });
             
-            // Marcar botão clicado
+            // Marcar o botão clicado
             event.target.classList.add('ativo');
             
-            // Atualizar ícone e cards
+            // Atualizar ícone
             const icones = {
                 matematica: '📐',
                 portugues: '📝',
                 geografia: '🌍',
                 historia: '🏛️'
             };
-            
-            const aulas = {
-                matematica: '32',
-                portugues: '28',
-                geografia: '24',
-                historia: '26'
-            };
-            
-            const exercicios = {
-                matematica: '187',
-                portugues: '142',
-                geografia: '118',
-                historia: '135'
-            };
-            
             document.getElementById('iconeMateria').textContent = icones[materia];
-            document.getElementById('aulasCount').textContent = aulas[materia];
             
-            if(materia === 'matematica') document.getElementById('exerciciosCount').textContent = '187';
-            else if(materia === 'portugues') document.getElementById('exerciciosCount').textContent = '142';
-            else if(materia === 'geografia') document.getElementById('exerciciosCount').textContent = '118';
-            else if(materia === 'historia') document.getElementById('exerciciosCount').textContent = '135';
+            // Atualizar cards de informação
+            const topicos = {
+                matematica: '8',
+                portugues: '6',
+                geografia: '7',
+                historia: '9'
+            };
+            document.getElementById('topicoCount').textContent = topicos[materia];
             
-            // Atualizar dicas
+            // Atualizar dicas no carrossel
             const dicas = {
-                matematica: ['📐 Funções: estude domínio e imagem', '📈 Pratique gráficos', '🔢 Conjuntos: faça exercícios'],
-                portugues: ['📖 Leia interpretação de texto', '✍️ Revise classes gramaticais', '📚 Figuras de linguagem'],
-                geografia: ['🗺️ Pratique coordenadas', '⛰️ Estude placas tectônicas', '☁️ Climas do Brasil'],
-                historia: ['🏺 Antiguidade: faça resumos', '⚔️ Idade Média: mapas mentais', '🌎 Grandes Navegações: linha do tempo']
+                matematica: [
+                    'Sempre identifique se as grandezas são diretas ou inversas',
+                    'Monte a proporção com atenção às unidades',
+                    'Na regra de 3 composta, analise cada grandeza separadamente'
+                ],
+                portugues: [
+                    'Um conto tem introdução, desenvolvimento, clímax e desfecho',
+                    'Foco narrativo pode ser em 1ª ou 3ª pessoa',
+                    'Contos têm poucos personagens e espaço reduzido'
+                ],
+                geografia: [
+                    'Rotação: 24h - dias e noites',
+                    'Translação: 365 dias - estações do ano',
+                    'Solstício: dias mais longos/noites mais longas'
+                ],
+                historia: [
+                    'Tropeiros ligavam Sul, Sudeste e Centro-Oeste',
+                    'Sorocaba era o principal mercado de muares',
+                    'Tropeirismo ajudou a formar muitas cidades'
+                ]
             };
             
             const gradeDicas = document.getElementById('gradeDicas');
@@ -548,10 +530,13 @@
             dicas[materia].forEach(dica => {
                 const card = document.createElement('div');
                 card.className = 'dica-card';
-                card.innerHTML = `<strong>💡</strong> ${dica}`;
+                card.innerHTML = `💡 ${dica}`;
                 gradeDicas.appendChild(card);
             });
         }
+
+        // Inicializar com Matemática
+        mostrarMateria('matematica');
     </script>
 </body>
 </html>
