@@ -495,8 +495,17 @@
                 btn.classList.remove('ativo');
             });
             
-            // Marcar o botão clicado
-            event.target.classList.add('ativo');
+            // Marcar o botão clicado (usando o evento ou encontrando pelo texto)
+            const botoes = document.querySelectorAll('.botao-materia');
+            for (let btn of botoes) {
+                if (btn.textContent.includes(materia.toUpperCase()) || 
+                    (materia === 'matematica' && btn.textContent.includes('MATEMÁTICA')) ||
+                    (materia === 'portugues' && btn.textContent.includes('PORTUGUÊS')) ||
+                    (materia === 'geografia' && btn.textContent.includes('GEOGRAFIA')) ||
+                    (materia === 'historia' && btn.textContent.includes('HISTÓRIA'))) {
+                    btn.classList.add('ativo');
+                }
+            }
             
             // Atualizar ícone
             const icones = {
@@ -515,7 +524,9 @@
             }
             
             // Esconder exemplos ao trocar de matéria
-            document.getElementById('exemplosMatematica').style.display = 'none';
+            if (document.getElementById('exemplosMatematica')) {
+                document.getElementById('exemplosMatematica').style.display = 'none';
+            }
             
             // Atualizar dicas no carrossel
             const dicas = {
